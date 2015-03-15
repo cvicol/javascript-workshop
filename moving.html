@@ -21,17 +21,19 @@
 		height:315px;
 		margin:0px;
 		padding:0px;
-        border: 1px solid blue;
+        border: 0px solid blue;
 		position:absolute;
 		left:15px;
 		top:50px;
+		background-color: blue;
 	}
 	</style>
 	
 </head>
 <body>
+    <div id="bigger"></div>
 	<div id="box1"></div>
-	<div id="bigger"></div>
+	
 	
 	<script>
     var box = document.getElementById("box1");
@@ -41,8 +43,8 @@
 	var widthOfBigBox = 315;
 	var initialLeftMargin = 15;
 	
-
-	window.addEventListener('keypress', function moveMe(event) {
+    //keypress works only in firefox not in chrome
+	window.addEventListener('keydown', function moveMe(event) {
 	  var keyCode = event.charCode ? event.charCode : event.keyCode
 		console.log(keyCode);
 	if (keyCode === 39) {
