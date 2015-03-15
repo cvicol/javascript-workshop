@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Starfield</title>
+		<style>
+			#container {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				left: 0px;
+				top: 0px;
+				z-index: -1;
+				background-color: #E0EEEE
+			}
+		</style>
+	</head>
+<body>
+	<!-- The main starfield container, fills the entire screen. -->
+	<div id="navigator">
+		<p> This is the starfield
+	</div>
+	<div id="container"></div>
+	<script src="starfield2.js"></script>
+    <script>
+		var container = document.getElementById('container');
+		var starfield = new Starfield();
+		starfield.initialise(container);
+		starfield.start();
+	</script>
+</body>
+</html>

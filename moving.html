@@ -1,0 +1,72 @@
+<html>
+<head>
+	<title>Moving stuff</title>
+	<style>
+	body{
+		margin:0px;
+		padding:0px;
+	}
+	#box1 {
+		width:45px;
+		height:45px;
+		margin:0px;
+		padding:0px;
+		background-color:red;
+		position:relative;
+		left:15px;
+		top:50px;
+	}
+	#bigger{
+		width:315px;
+		height:315px;
+		margin:0px;
+		padding:0px;
+        border: 1px solid blue;
+		position:absolute;
+		left:15px;
+		top:50px;
+	}
+	</style>
+	
+</head>
+<body>
+	<div id="box1"></div>
+	<div id="bigger"></div>
+	
+	<script>
+    var box = document.getElementById("box1");
+	var bigger = document.getElementById("bigger");
+    var heightOfBigBox = 315;
+	var initialTopMargin = 50;
+	var widthOfBigBox = 315;
+	var initialLeftMargin = 15;
+	
+
+	window.addEventListener('keypress', function moveMe(event) {
+	  var keyCode = event.charCode ? event.charCode : event.keyCode
+		console.log(keyCode);
+	if (keyCode === 39) {
+		  var rightsideBoxBorder = box.offsetLeft + 45;
+		  if(rightsideBoxBorder + 15 <= widthOfBigBox + initialLeftMargin) {
+ 		     box.style.left = box.offsetLeft + 15;
+	      } 
+ 	  } else if(keyCode === 37){
+		  
+          if(box.offsetLeft - 15 >= initialLeftMargin) { 
+		    box.style.left = box.offsetLeft - 15;
+	      }
+ 	  } else if(keyCode === 40) {
+		  var boxBottomPosition = box.offsetTop + 45;
+		  if(boxBottomPosition + 15  <= heightOfBigBox + initialTopMargin) {
+            box.style.top = box.offsetTop + 15;
+	      }
+ 	  } else if(keyCode === 38) {
+		  if(box.offsetTop - 15 >= initialTopMargin) {
+			  box.style.top = box.offsetTop - 15;
+		  }
+ 	  }
+	  
+	});
+	</script>
+</body>
+</html>
