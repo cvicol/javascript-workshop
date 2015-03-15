@@ -42,9 +42,9 @@
 	var initialLeftMargin = 15;
 	
 
-	window.addEventListener('keypress', function moveMe(event) {
-	  var keyCode = event.charCode ? event.charCode : event.keyCode
-		console.log(keyCode);
+	window.addEventListener('keydown', function moveMe(event) {
+		var keyCode = event.charCode ? event.charCode : event.keyCode
+	  console.log(keyCode);
 	if (keyCode === 39) {
 		  var rightsideBoxBorder = box.offsetLeft + 45;
 		  if(rightsideBoxBorder + 15 <= widthOfBigBox + initialLeftMargin) {
