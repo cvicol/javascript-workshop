@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Starfield</title>
+		<style>
+		.show {
+			display:none;
+		}
+		.hide {
+			display:hidden;
+		}
+		.error{
+			text-color: red;
+		}
+		.redInput{
+			border-color:red;
+		}
+		.correctInput{
+			border-color:black;
+		}
+		input {
+			display:block;
+		}
+		
+		</style>
+	</head>
+<body>
+	<!-- The main starfield container, fills the entire screen. -->
+	<div id="navigator">
+		<p> This is the place where you get your questions answered
+	</div>
+    <fieldset>
+	<p> Farenheith..what is that?</p> 	
+    <form id="convertor">
+		<label for="quantity"> How many degrees Celsius you need conerting into F?</label>
+		<input name="quantity"type="text"/>
+		<span id="quantity_error_msg" class="hide error"></span>
+		<br/>
+		<input type="button" id="convert" name="convert" value="Convert Now!">		
+		
+		<br/>	
+		<span id="convertor_answer">Answer:</span>
+		<br/>		
+		
+	</form>	
+	</fieldset>
+	
+    <script>
+	   	document.getElementById("convert").addEventListener('click', function convertTemperature(event) {
+		//get the current value of the temperature input field
+		//if current value is not a number, or current value is bigger then 9 milion or smaller then −273.15°C make the input border red and show an error message 
+		//else convert temp with formula : 37°C x  9/5 + 32 = 98.6°F
+		//white answer in convertor_answer 
+		//if prevous time we had an error remore it	
+						
+		});	
+	</script>
+</body>
+</html>
