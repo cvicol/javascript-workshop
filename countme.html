@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>count how many character in input field</title>
+
+
+</head>
+
+
+
+<body>
+
+<form id="myName">
+<label for="firstName">firstname</label>
+  <input type="text" id="name" name="firstName"/>
+<span id="counter">0 characters</span>
+</form>
+
+<script>
+var counter = 0
+ document.getElementById("name").addEventListener("keydown", function countMe(event){
+	 var key = event.charCode ? event.charCode : event.keyCode
+			 if(key >=65 && key <= 90)
+			 {
+			 counter = counter + 1 
+			 console.log(counter)
+			 document.getElementById("counter").innerHTML = counter + " " + "characters"
+			 }
+			 else if(key === 8 && counter > 0)
+			 {
+				 counter = counter - 1
+				 document.getElementById("counter").innerHTML = counter + " " + "characters"
+			 }
+			 else
+			 {
+				 document.getElementById("name").value = document.getElementById("name").value.replace(/[^a-zA-Z\.]/g, "")
+				 
+			 }
+	 
+ });
+</script>
+
+</body>
+</html>
